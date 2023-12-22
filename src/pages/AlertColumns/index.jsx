@@ -20,13 +20,14 @@ import { tailwindConfig, hexToRGB } from '../../utils/Utils';
 HighchartsMap(Highcharts);
 
 const AlertCoumns = () => {
-  const el = {
-    1: "Station 1",
-    2: "Station 2",
-    3: "Station 3",
-    4: "Station 4",
-    5: "Station 5",
-  };
+  // const el = {
+  //   1: "Station 1",
+  //   2: "Station 2",
+  //   3: "Station 3",
+  //   4: "Station 4",
+  //   5: "Station 5",
+  // };
+  const el = { st1: "1", st2: "2", st3: "3", st4: "4", st5: "5" };
   const [criticalAlerts, setCriticalAlerts] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -102,8 +103,8 @@ const AlertCoumns = () => {
         }
       }
 
-      console.log(y);
-      console.log(x);
+      // console.log(y);
+      // console.log(x);
 
       if (x > 0 && y != null) {
         let alert = { x: x, y: y };
@@ -407,7 +408,7 @@ const AlertCoumns = () => {
                 <div className="row">
                   <div className="col-md-12">
                     <div className="col-md-2"></div>
-                    <div className="col-md-6 chart-container">
+                    <div className="col-md-6 chart-container-1">
                       {options != null ? (
                         <>
                           <HighchartsReact
@@ -479,11 +480,11 @@ const AlertCoumns = () => {
                           >
                             Time
                           </label>
-                          <div className="critial-alert col-md-6">
-                            <h3 className="critital-title">Critical</h3>
+                          <div className="critial-alert flex justify-center">
+                            <h3 className="critital-title"><strong>Critical</strong></h3>
 
                             <div className="critical-message-container">
-                              <img src={danger} style={{ width: "10%" }} />
+                              <img src={danger} style={{ width: "50%" }} />
                               <span className="critical-message">
                                 Move{" "}
                                 <span className="highlight-alert">

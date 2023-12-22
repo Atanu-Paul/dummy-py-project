@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import HighchartsMap from "highcharts/modules/map";
@@ -23,6 +23,8 @@ highchartsMore(Highcharts);
 // const val = require("highcharts/modules/exporting")(Highcharts);
 // const va1l = require("highcharts/highcharts-more")(Highcharts);
 //import './HeatMap.css';
+
+// const AlertCoumns = lazy(()=> import ('./AlertColumns'));
 
 HighchartsMap(Highcharts);
 
@@ -67,7 +69,7 @@ const HeatMap = () => {
         p.push({ name: el[key], value: point,  style: {
               color: colors[index]
             } });
-        o = { name: el[key], data: p };
+        o = { name:   `Station : ${el[key]}`, data: p };
         stationCountTemp.push(o);
       });
 
@@ -205,7 +207,7 @@ const HeatMap = () => {
             </div>
 
             {/* Cards */}
-            HeatMapDiv
+            {/* HeatMapDiv */}
             <div className="grid grid-cols-2 gap-9">
               <HeatMapDiv>
                 <div className="row">
